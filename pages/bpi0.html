@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerem Alan - Blog</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="brand"><a href="../index.html">Kerem Alan</a></div>
+        <div class="nav">
+            <a href="../index.html">Anasayfa</a>
+        </div>
+    </header>
+    <main>
+        <img id="toTop" src="../assets/img/bpi0.png" alt="">
+        <h2 id="orient">Intro to JavaScript</h2>
+        <article id="article">
+            <strong>Intro</strong>
+            <p>Will be times when reading this book feels terribly frustrating. Much of this material will be combined in ways that require you to make additional connections.</p>
+            <p>It is up to you make the necessary effort. When you are struggling to follow the book, do not jump to any conclusions about your own capabilities. You are fine-you just need to keep at it. Take a break, reread some material, and make sure you read and understand the example programs and exercise. Learning is hard work, but everything you learn is yours and will make subsequent learning easier.</p>
+            <p>A program is a building of thought. It is costless to build, it is weightless, and it grows easily under our typing hands.</p>
+            <p>But without care, a program’s size and complexity will grow out of control, confusing even the person who created it. Keeping programs under control is the main problem of programming. When a program works, it is beautiful. The art of programming is the skill of controlling complexity. The great program is subdued-made simple in its complexity.</p>
+            <p>There are many terrible mistakes to make in program design, and you should go ahead and make them so that you understand them. A sense of what a good program looks like is developed in practice, not learned from a list of rules.</p>
+            <strong>Why Language Matters?</strong>
+            <p>In the beginning, at the birthday of computing, there were no programming languages. Programs looked something like this:</p>
+            <code id="code">
+                00110001 00000000 00000000 <br>
+                00110001 00000001 00000001 <br>
+                00110011 00000001 00000010 <br>
+                01010001 00001011 00000010 <br>
+                00100010 00000010 00001000 <br>
+                01000011 00000001 00000000 <br>
+                01000001 00000001 00000001 <br>
+                00010000 00000010 00000000 <br>
+                01100010 00000000 00000000
+            </code>
+            <p>That is a program to add the numbers 1..10 and print out the result 55. To program early computers, it was necessary to set large arrays of switches in the right position or punch holes in strips of cardboard and feed them to the computer. You can probably how tedious and error-prone this procedure was. Even writing simple programs required much cleverness and discipline. Complex ones were nearly inconceivable.</p>
+            <p>Each line of the previous program contains a single instruction. It could be written English like this:</p>
+            <ol>
+                <li>Store the number 0 in memory location 0.</li>
+                <li>Store the number 1 in memory location 1.</li>
+                <li>Store the value of memory location 1 in memory location 2.</li>
+                <li>Subtract the number 11 from the value in memory location 2.</li>
+                <li>If the value in memory location 2 is the number 0, continue with instruction 9.</li>
+                <li>Add the value of memory location 1 to memory location 0.</li>
+                <li>Add the number 1 to the value of memory location 1.</li>
+                <li>Continue with instruction 3.</li>
+                <li>Output the value of memory location 0.</li>
+            </ol>
+            <p>Although that is already more readable than the soup of bits, it is still rather obscure. Using names instead of numbers for the instructions and memory locations helps.</p>
+            <code id="code">
+                Set “total” to 0. <br>
+                Set “count” to 1. <br>
+               [loop] <br>
+                Set “compare” to “count”. <br>
+                Subtract 11 from “compare”. <br>
+                If “compare” is zero, continue at [end]. <br>
+                Add “count” to “total”. <br>
+                Add 1 to “count”. <br>
+                Continue at [loop]. <br>
+               [end] <br>
+                Output “total”. <br>
+            </code>
+            <p>Here is the same program in JavaScript:</p>
+            <code id="code">
+                let total = 0, count = 1; <br>
+                While (count <= 10) { <br>
+                    total += count; <br>
+                    count += 1; <br>
+                } <br>
+                console.log(total); // -> 55 <br>
+            </code>
+            <p>This version gives us a few improvements. Most important, there is no need to specify the way we want the program to jump back and forth anymore. The while construct takes care of that. It continues executing the block (wrapped in braces) below it as long as the condition it was given holds. That condition is <= 10, which means “count is less than or equal to 10”. We no longer have to create temporary value and compare that to zero, which was just and uninteresting detail. Part of the power of programming languages is that they can take care of uninteresting details for us.</p>
+            <p>Here is the what the program could look like if we happened to have the convenient operations range and sum available, which respectively create a collection of numbers within a range and compute the sum of a collection of numbers;</p>
+            <code id="code">console.log(sum(range(1, 10)));</code>
+            <p>The moral of this story is that the same program can expressed in both long and short, unreadable and readable ways. The first version of the program was extremely obscure, whereas this last one is almost English: Log the sum of operations  range of numbers from 1 to 10.</p>
+            <p>A good programming language helps the programmer by allowing them to talk about the actions that the computer has to perform on a higher level. It helps omit details, provides convenient building blocks, allows you to define your own building blocks, and makes those blocks easy to compose.</p>
+            <strong>What is JavaScript?</strong>
+            <p>JavaScript was introduced in 1995 as a way to add programs to web pages in Netscape Navigator browser. The language has since been adopted by all other major graphical web browsers. JavaScript is also used in more traditional websites to provide various forms of interactivity and cleverness.</p>
+            <p>JavaScript has almost nothing to do with the programming language named Java. The similar name was inspired by marketing considerations rather than good judgment.</p>
+            <p>A standard document was written to describe the way the JavaScript language should work so that the various pieces of software that claimed to support JavaScript were actually talking about the same language. This is called the ECMAScript standart, after the Ecma International organization that did the standardization. ECMAScript and JavaScript can be used interchangeably.</p>
+            <p>There have been several versions of JavaScript. ECMAScript version 3 was the widely supported version in the time of JavaScript’s ascent to dominance, roughly between 2000 and 2010.</p>
+            <p>In 2015 version 6 came out, a major update that included some of the ideas planned for version 4. Since then we’ve had new, small updates every year.</p>
+            <p>The fact that the language is evolving means that browsers have to constantly keep up, and if you’re using an older browser, it may not support every feature.</p>
+            <p>Web browsers are not the only platforms on which JavaScript is used. Some databases, such as MongoDB and CouchDB, use JavaScript as their scripting, and query language.</p>
+            <strong>Code, And What To Do With It</strong>
+            <p>Code is the text that makes up programs.</p>
+            <span class="author">Kerem Alan</span>
+            <span class="date">24 Ocak 2022, 19:34</span>
+        </article-text>
+    </main>
+</body>
+</html>
